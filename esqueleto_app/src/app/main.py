@@ -14,15 +14,14 @@ def main():
     frame = ttk.Frame(root, padding=16)
     frame.pack(fill="both", expand=True)
 
-    ttk.Label(frame, text="Aplicación Demo (tkinter)", font=("Segoe UI", 12, "bold")).pack(pady=(0, 12))
-    ttk.Button(frame, text="1) Home / Bienvenida", command=lambda: open_win_home(root)).pack(pady=4, fill="x")
-    ttk.Button(frame, text="2) Formulario", command=lambda: open_win_form(root)).pack(pady=4, fill="x")
-    ttk.Button(frame, text="3) Lista (CRUD básico)", command=lambda: open_win_list(root)).pack(pady=4, fill="x")
-    ttk.Button(frame, text="4) Tabla (Treeview)", command=lambda: open_win_table(root)).pack(pady=4, fill="x")
-    ttk.Button(frame, text="5) Canvas (Dibujo)", command=lambda: open_win_canvas(root)).pack(pady=4, fill="x")
+    ttk.Label(frame, text="Hola, vamos a cuidar al planeta", font=("Segoe UI", 12, "bold")).pack(pady=(0, 12))
+    ttk.Button(frame, text="Metas", command=lambda: open_win_home(root)).pack(pady=4, fill="x")
+    ttk.Button(frame, text="progreso", command=lambda: open_win_form(root)).pack(pady=4, fill="x")
+    ttk.Button(frame, text="Talleres", command=lambda: open_win_list(root)).pack(pady=4, fill="x")
+    ttk.Button(frame, text="Tips", command=lambda: open_win_table(root)).pack(pady=4, fill="x")
+    #ttk.Button(frame, text="5) Canvas (Dibujo)", command=lambda: open_win_canvas(root)).pack(pady=4, fill="x")
     ttk.Separator(frame).pack(pady=6, fill="x")
     ttk.Button(frame, text="Salir", command=root.destroy).pack(pady=6)
-
     root.mainloop()
 
 if __name__ == "__main__":
