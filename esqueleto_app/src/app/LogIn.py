@@ -1,24 +1,24 @@
 import tkinter as tk
 from tkinter import ttk
-from CreateAccount import crea_cuenta
-from core.leer_usuario import leer_usuario
-from main import main
-from core.classes import User
+from .CreateAccount import crea_cuenta
+from src.core.leer_usuario import leer_usuario
+from .win_home import open_win_home
+from src.core.classes import User
 
-def dirige():
+def dirige(user:User):
     LogIn.destroy()
-    main()
+    open_win_home(user)
 
-def emergente(titulo, mensaje, dirigir):
+def emergente(titulo, mensaje, dirigir, user:User = None):
     win.title(titulo)
-    win.geometry("250x150")
+    win.geometry("300x150")
 
     frame = ttk.Frame(win, padding=12)
     frame.pack(fill="both", expand=True)
 
     tk.Label(frame, text=mensaje).pack()
     if dirigir:
-        tk.Button(frame, text="Ok", command=dirige).pack()
+        tk.Button(frame, text="Ok", command=dirige(user)).pack()
     else:
         tk.Button(frame, text="Ok", command= lambda: win.destroy()).pack()
 
@@ -32,7 +32,9 @@ def check(parent ,usuario, clave):
     elif user.password != clave:
         emergente("Contraseña Incorrecta", "Contraseña incorrecta\nintente de nuevo", 0)
     else:
-        emergente("Inicio correcto", "Log In correcto,\ndirigir a inicio", 1)
+        emergente("Inicio correcto", "Log In correcto,\ndirigir a inicio", 1, user)
+    
+
 
 def logIn():
     global LogIn
@@ -57,7 +59,3 @@ def logIn():
     ttk.Button(frame, text="Crear cuenta", command=lambda: crea_cuenta(LogIn)).pack()
 
     LogIn.mainloop()
-
-if __name__ == "__main__":
-    logIn()
-
