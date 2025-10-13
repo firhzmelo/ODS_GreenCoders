@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
-from core.leer_usuario import leer_usuario
-from core.classes import User
+from src.core.leer_usuario import leer_usuario
+from src.core.classes import User
 
 def emergente(titulo, mensaje, elim):
     global win
