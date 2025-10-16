@@ -1,12 +1,12 @@
 # ODS_GreenCoders
 
 ## Integrantes:
-- Fátima Roxana Romero
-- Alejandra Torres
-- Maria Fernanda Liera
-- Cesar Ortega
-- Ivanna Martines
-- Fernando Hernández
+- Fátima Roxana Romero (Desarrollador UI (Interfaz de Usuario))
+- Alejandra Torres (Product Owner (PO))
+- Maria Fernanda Liera (Product Owner (PO))
+- Cesar Ortega (Desarrollador de Datos/API)
+- Ivanna Martinez (QA / Analista de Pruebas)
+- Fernando Hernández (Líder Técnico (Tech Lead))
 
 ## ODS y población objetivo  
 13 - Acción por el clima
@@ -58,6 +58,9 @@ Consecuencias sobre la problemática específica:
 ## Definición de criterios de exito
 
 - El prototipo podrá guardar cuantos objetivos cumplió el usuario durante la semana
-- El prototipo podrá mostrar un estimado de cuanto carbono el usuario evitó
 - El prototipo podrá mostrar los datos de la persona usando la aplicación
-- El prototipo podrá proponer diferentes metas de acuerdo al usuario  
+- El prototipo podrá proponer diferentes metas de acuerdo al usuario
+
+La aplicación de ReLeaf es una plicación para manterner el progreso del usuario para poder cumplir metas para ayudar al cambio climatico, cada usuario genera su cuenta y puede guardar su progreso.
+
+Para poder ejecutar la aplicación es necesiario tener instalado python 3 y VScode, una vez descargada la carpeta abrala con VScode, usando el debuger ejecute el programa. Una vez hecho hecho esto puede crear su cuenta para hacer uso de la app, para crear su cuenta oprima el boton de crear cuenta e ingrese sus datos, una vez que se haya creado podrá acceder a su cuenta y a todas las funciones de la aplicación 
