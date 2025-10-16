@@ -7,7 +7,7 @@ class User:
         self.tasks = []
 
 class Task:
-    def __init__(self, name, desc):
+    def __init__(self, name, desc=None):
         self.name = name
         self.desc = desc
         self.day_done = None
