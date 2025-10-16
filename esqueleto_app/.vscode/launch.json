@@ -1,13 +1,14 @@
 {
   "version": "0.2.0",
   "configurations": [
+
     {
-      "name": "Programa con PYTHONPATH=src",
+      "name": "Programa con PYTHONPATH=${workspaceFolder}",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}/src/app/LogIn.py",
+      "program": "${workspaceFolder}/app/main.py",
       "cwd": "${workspaceFolder}",
-      "env": { "PYTHONPATH": "${workspaceFolder}/src" },
+      "env": { "PYTHONPATH": "${workspaceFolder}" },
       "console": "integratedTerminal",
       "justMyCode": true
     }
