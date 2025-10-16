@@ -1,19 +1,22 @@
-import tkinter as tk
-from tkinter import ttk
-from src.core.leer_usuario import leer_usuario
-from src.core.classes import User
+import ttkbootstrap as ttk
+from core.leer_usuario import leer_usuario
+from core.classes import User
+
+tamLetra = 10
+tipLetra = "Verdana"
+tipTitulo = "Century Gothic"
 
 def emergente(titulo, mensaje, elim):
     global win
-    win = tk.Toplevel(root)
+    win = ttk.Toplevel(root)
     win.title(titulo)
-    win.geometry("150x150")
+    win.geometry("400x400")
 
-    tk.Label(win, text=mensaje).pack()
+    ttk.Label(win, text=mensaje, bootstyle="warning").pack()
     if elim:
-        tk.Button(win, text="Ok", command=lambda: root.destroy()).pack()
+        ttk.Button(win, text="Ok", command=lambda: win.destroy()).pack(pady=20)
     else:
-        tk.Button(win, text="Ok", command=lambda: win.destroy()).pack()
+        ttk.Button(win, text="Ok", command=lambda: win.destroy()).pack(pady=20)
 
 def has_cuenta(usuario, nombre, clave, clave2):
     import os
@@ -35,28 +38,31 @@ def has_cuenta(usuario, nombre, clave, clave2):
 
 def crea_cuenta(logIn):
     global root
-    root = tk.Toplevel(logIn)
+    root = ttk.Toplevel(logIn)
     root.title("Crea tu cuenta")
-    root.geometry("350x350")
+    root.geometry("500x900")
+
+    s=ttk.Style()
+    s.configure("TButton", font=("Verdana",10, "bold"))
 
     frame = ttk.Frame(root, padding=16)
     frame.pack(fill="both", expand=True)
 
-    ttk.Label(frame, text="Crea una cuenta", font=("Segoe UI",16, "bold")).pack(pady = 10)
+    ttk.Label(frame, text="Crea una cuenta", font=(tipTitulo,20, "bold")).pack(pady = 10)
 
-    usuario = tk.StringVar()
-    nombre = tk.StringVar()
-    clave = tk.StringVar()
-    clave2 = tk.StringVar()
+    usuario = ttk.StringVar()
+    nombre = ttk.StringVar()
+    clave = ttk.StringVar()
+    clave2 = ttk.StringVar()
 
-    ttk.Label(frame, text="Usuario").pack(fill='x')
-    ttk.Entry(frame, textvariable=usuario).pack(fill='x')
-    ttk.Label(frame, text="Nombre").pack(fill='x')
-    ttk.Entry(frame, textvariable=nombre).pack(fill="x")
-    ttk.Label(frame, text="Contraseña").pack(fill='x')
-    ttk.Entry(frame, textvariable=clave, show='*').pack(fill='x')
-    ttk.Label(frame, text="Repite Contraseña").pack(fill='x')
-    ttk.Entry(frame, textvariable=clave2, show='*').pack(fill='x')
+    ttk.Label(frame, text="Usuario", font=("Verdana", tamLetra)).pack(fill='x', pady=10)
+    ttk.Entry(frame, textvariable=usuario).pack(fill='x', pady=10)
+    ttk.Label(frame, text="Nombre",font=(tipLetra, tamLetra)).pack(fill='x', pady=10)
+    ttk.Entry(frame, textvariable=nombre).pack(fill="x", pady=10)
+    ttk.Label(frame, text="Contraseña",font=(tipLetra, tamLetra)).pack(fill='x', pady=10)
+    ttk.Entry(frame, textvariable=clave, show='*').pack(fill='x', pady=10)
+    ttk.Label(frame, text="Repite Contraseña",font=(tipLetra, tamLetra)).pack(fill='x', pady=10)
+    ttk.Entry(frame, textvariable=clave2, show='*').pack(fill='x', pady=10)
 
-    ttk.Button(frame, text="Crear", command=lambda: has_cuenta(usuario.get(), nombre.get(), clave.get(), clave2.get())).pack()
+    ttk.Button(frame, text="Crear", command=lambda: has_cuenta(usuario.get(), nombre.get(), clave.get(), clave2.get())).pack(pady=15)
     root.mainloop()
