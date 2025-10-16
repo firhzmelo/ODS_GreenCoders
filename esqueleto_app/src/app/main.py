@@ -1,38 +1,8 @@
-import tkinter as tk
-from tkinter import ttk
-from .LogIn import logIn
-from .win_home import open_win_home
-from .win_form import open_win_form
-from .win_list import open_win_list
-from .win_table import open_win_table
-from .win_progress import open_win_progress
-from .win_canvas import open_win_canvas
-from src.core.classes import User, Task
+from LogIn import logIn
+from win_home import open_win_home
 
-"""
-def main():
-    root = tk.Tk()
-    root.title("Proyecto Integrador - MVP")
-    root.geometry("420x340")
-
-    frame = ttk.Frame(root, padding=16)
-    frame.pack(fill="both", expand=True)
-
-    ttk.Label(frame, text="Aplicación Demo (tkinter)", font=("Segoe UI", 12, "bold")).pack(pady=(0, 12))
-    ttk.Button(frame, text="1) Home / Bienvenida", command=lambda: open_win_home(root)).pack(pady=4, fill="x")
-    ttk.Button(frame, text="2) Formulario", command=lambda: open_win_form(root)).pack(pady=4, fill="x")
-    ttk.Button(frame, text="3) Canvas", command=lambda: open_win_canvas(root)).pack(pady=4, fill="x")
-    ttk.Button(frame, text="4) Tabla (Treeview)", command=lambda: open_win_table(root)).pack(pady=4, fill="x")
-    user = User("user1", 'Fer', '123')
-    task = Task('Tirar la basura')
-
-    ttk.Button(frame, text="5) Progreso", command=lambda: open_win_progress(root, user)).pack(pady=4, fill="x")
-    ttk.Separator(frame).pack(pady=6, fill="x")
-    ttk.Button(frame, text="Salir", command=root.destroy).pack(pady=6)
-
-    root.mainloop()
-
-"""
+from win_progress import open_win_progress
+from core.classes import User, Task
 
 if __name__ == "__main__":
     logIn()
